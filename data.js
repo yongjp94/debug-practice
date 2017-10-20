@@ -1,4 +1,4 @@
-var data = [
+const DATA = [
     {
         "id": 1,
         "title": "movie 1",

@@ -1,4 +1,4 @@
-var solution = document.getElementById('solution');
+var solution = document.getElementById("table-body");
 
 
 /*
@@ -11,14 +11,34 @@ var solution = document.getElementById('solution');
  * 4. Use built-in debuggers in your browsers!
  */
 
-data.forEach(function(movie) {
-
-    let movieChild = document.createElement('li');
-
-    let movieHtml = "<b>id</b>: " + movie.id;
-    movieHtml += " * <b>title</b>: " + movie.title;
-    movieHtml += " * <b>details</b>: " + movie.details;
-    movieChild.innerHTML = movieHtml;
-
+DATA.forEach(function(movie) {
+    let movieChild = createMovieElement(movie.id, movie.title, movie.details);
+        
     solution.appendChild(movieChild);
 });
+
+function createMovieElement(id, title, details) {
+    let movierow = createElem("tr");
+    
+    movierow.appendChild(createElem("td", id));
+    movierow.appendChild(createElem("td", title));
+    movierow.appendChild(createElem("td", details));
+    return movierow;
+
+}
+
+function createElem(name, value, className) {
+    let newElem = document.createElement("name");
+    newElem.textContent = value;
+    if (className) {
+        newElem.className = className;
+    }
+    return newElem;
+}
+
+function render(state) {
+    let tbody = 
+    tbody.textContent = "";
+    
+
+}
